@@ -1,0 +1,80 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXFileReference section */
+		5969838FAD50710DF560C93A /* tree_traversal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tree_traversal.c; sourceTree = "<group>"; };
+		5969884DFD8CB290F8C83230 /* test.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = test.c; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		5969850756A0E324306A1B45 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		59698EBD90F300A06CAFF2BE = {
+			isa = PBXGroup;
+			children = (
+				5969850756A0E324306A1B45 /* Products */,
+				5969838FAD50710DF560C93A /* tree_traversal.c */,
+				5969884DFD8CB290F8C83230 /* test.c */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		59698F35154F403FA1D10CFF /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 5969828A4234F50E24296873 /* Build configuration list for PBXProject "tree_traversal" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 59698EBD90F300A06CAFF2BE;
+			productRefGroup = 5969850756A0E324306A1B45 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		59698658DEB316EDF8002268 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		59698EAB97DCA1BC93B468FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5969828A4234F50E24296873 /* Build configuration list for PBXProject "tree_traversal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59698658DEB316EDF8002268 /* Release */,
+				59698EAB97DCA1BC93B468FF /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 59698F35154F403FA1D10CFF /* Project object */;
+}
