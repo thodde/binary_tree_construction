@@ -43,12 +43,14 @@ int gap = 3;
 // this is the x coordinate of the next char printed
 int print_next;
 
-// prototypes for functions
+// prototypes for tree construction functions
 node* build_tree(int[], int, int, int[], int, int);
 int search(int[], int, int, int);
 node* new_node(int);
 void print_inorder(node*);
 void print_postorder(node*);
+
+// prototypes for ascii tree functions
 int MIN (int, int);
 int MAX (int, int);
 asciinode* build_ascii_tree_recursive(node*);
@@ -64,8 +66,6 @@ void print_ascii_tree(node*);
 int main() {
     int in[] = { 9, 3, 1, 0, 4, 2, 7, 6, 8, 5 };
     int post[] = { 9, 1, 4, 0, 3, 6, 7, 5, 8, 2 };
-
-    printf("Input arrays:\n");
 
     int len = sizeof(in)/sizeof(in[0]);
     node* root = build_tree(in, 0, len - 1, post, 0, len - 1);

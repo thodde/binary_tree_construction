@@ -6,7 +6,8 @@
     <ignored path=".idea/workspace.xml" />
     <file path="/tree_traversal.c" changelist="2a43d45b-851a-441c-94c8-eb0e2c1fe6d1" time="1415057418492" ignored="false" />
     <file path="/test.c" changelist="2a43d45b-851a-441c-94c8-eb0e2c1fe6d1" time="1415142288887" ignored="false" />
-    <file path="/Dummy.txt" changelist="2a43d45b-851a-441c-94c8-eb0e2c1fe6d1" time="1415142751010" ignored="false" />
+    <file path="/Dummy.txt" changelist="2a43d45b-851a-441c-94c8-eb0e2c1fe6d1" time="1415142844270" ignored="false" />
+    <file path="/binary_tree_construction.c" changelist="2a43d45b-851a-441c-94c8-eb0e2c1fe6d1" time="1415143106884" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +30,7 @@
       <file leaf-file-name="binary_tree_construction.c" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/binary_tree_construction.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="47" selection-start="190" selection-end="190" vertical-scroll-proportion="-5.243902">
+            <state line="45" column="36" selection-start="906" selection-end="906" vertical-scroll-proportion="0.30487806">
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -57,6 +58,7 @@
       <list>
         <option value="$PROJECT_DIR$/tree_traversal.c" />
         <option value="$PROJECT_DIR$/test.c" />
+        <option value="$PROJECT_DIR$/binary_tree_construction.c" />
       </list>
     </option>
   </component>
@@ -92,6 +94,20 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tree_traversal" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="DirectoryView.Xcode">
         <subPane>
           <PATH>
@@ -112,30 +128,16 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tree_traversal" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="recentsLimit" value="5" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="OBJC.PRESERVED_TARGET_SELECTION" value="" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager" selected="Application.Unnamed">
     <configuration default="false" name="Unnamed" type="AppleRunConfiguration" factoryName="Application" temporary="true" SCHEME_NAME="Unnamed" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
@@ -268,7 +270,16 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/binary_tree_construction.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="47" selection-start="190" selection-end="190" vertical-scroll-proportion="-5.243902">
+        <state line="289" column="81" selection-start="7947" selection-end="7947" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/binary_tree_construction.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="36" selection-start="906" selection-end="906" vertical-scroll-proportion="0.30487806">
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
