@@ -92,7 +92,7 @@ int main() {
  *  do not form a tree
  */
 node* build_tree(int in[], int inStart, int inEnd,
-                       int post[], int postStart, int postEnd) {
+                 int post[], int postStart, int postEnd) {
     if(inStart > inEnd || postStart > postEnd)
         return NULL;
 
@@ -103,7 +103,7 @@ node* build_tree(int in[], int inStart, int inEnd,
     int inIndex = search(in, inStart, inEnd, rootValue);
 
     // Using index in in-order traversal, construct left and right subtrees
-    tNode->left = build_tree(in, inStart, inIndex-1, post, postStart, postStart+inIndex-(inStart+1));
+    tNode->left = build_tree(in, inStart, inIndex-1, post, postStart, postStart + inIndex - (inStart + 1));
     tNode->right = build_tree(in, inIndex+1, inEnd, post, postStart + inIndex - inStart, postEnd - 1);
 
     return tNode;
