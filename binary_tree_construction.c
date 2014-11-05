@@ -64,8 +64,13 @@ void print_ascii_tree(node*);
 
 // Driver program to test functions
 int main() {
-    int in[] = { 9, 3, 1, 0, 4, 2, 7, 6, 8, 5 };
-    int post[] = { 9, 1, 4, 0, 3, 6, 7, 5, 8, 2 };
+    //int in[] = { 9, 3, 1, 0, 4, 2, 7, 6, 8, 5 };
+    //int post[] = { 9, 1, 4, 0, 3, 6, 7, 5, 8, 2 };
+
+    // further proof of correctness from 
+    // en.wikipedia.org/wiki/Binary_search_tree
+    int in[] = { 1, 3, 4, 6, 7, 8, 10, 13, 14 };
+    int post[] = { 1, 4, 7, 6, 3, 13, 14, 10, 8 };
 
     int len = sizeof(in)/sizeof(in[0]);
     node* root = build_tree(in, 0, len - 1, post, 0, len - 1);
