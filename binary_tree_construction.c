@@ -97,7 +97,7 @@ node* build_tree(int in[], int inStart, int inEnd,
         return NULL;
 
     int rootValue = post[postEnd];
-    node *tNode = new_node(rootValue);
+    node* tNode = new_node(rootValue);
 
     // find the index of this node in in-order traversal
     int inIndex = search(in, inStart, inEnd, rootValue);
@@ -213,7 +213,7 @@ asciinode* build_ascii_tree(node* t) {
 }
 
 // free all the nodes of the given tree
-void free_ascii_tree(asciinode *node) {
+void free_ascii_tree(asciinode* node) {
     if (node == NULL) return;
     free_ascii_tree(node->left);
     free_ascii_tree(node->right);
@@ -224,7 +224,7 @@ void free_ascii_tree(asciinode *node) {
 // It assumes that the center of the label of the root of this tree
 // is located at a position (x,y).  It assumes that the edge_length
 // fields have been computed for this tree.
-void compute_lprofile(asciinode *node, int x, int y) {
+void compute_lprofile(asciinode* node, int x, int y) {
     int i, isleft;
     if (node == NULL) return;
 
@@ -241,7 +241,7 @@ void compute_lprofile(asciinode *node, int x, int y) {
     compute_lprofile(node->right, x+node->edge_length+1, y+node->edge_length+1);
 }
 
-void compute_rprofile(asciinode *node, int x, int y) {
+void compute_rprofile(asciinode* node, int x, int y) {
     int i;
     int notleft;
     if (node == NULL) return;
@@ -261,7 +261,7 @@ void compute_rprofile(asciinode *node, int x, int y) {
 
 // This function fills in the edge_length and
 // height fields of the specified tree
-void compute_edge_lengths(asciinode *node) {
+void compute_edge_lengths(asciinode* node) {
     int h, hmin, i, delta;
     if (node == NULL) return;
     compute_edge_lengths(node->left);
@@ -294,7 +294,7 @@ void compute_edge_lengths(asciinode *node) {
         }
 
         delta = 4;
-        for (i=0; i<hmin; i++) {
+        for (i = 0; i < hmin; i++) {
             delta = MAX(delta, gap + 1 + rprofile[i] - lprofile[i]);
         }
 
@@ -322,7 +322,7 @@ void compute_edge_lengths(asciinode *node) {
 
 // This function prints the given level of the given tree, assuming
 // that the node has the given x cordinate.
-void print_level(asciinode *node, int x, int level) {
+void print_level(asciinode* node, int x, int level) {
     int i, isleft;
     if (node == NULL) return;
     isleft = (node->parent_dir == -1);
