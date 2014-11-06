@@ -49,6 +49,10 @@ int search(int[], int, int, int);
 node* new_node(int);
 void print_inorder(node*);
 void print_postorder(node*);
+void print_input_array(int[], int);
+int in_fill_array(node*, int*, int);
+int post_fill_array(node*, int*, int);
+int compare_arrays(int*, int*);
 
 // prototypes for ascii tree functions
 int MIN (int, int);
@@ -64,6 +68,7 @@ void print_ascii_tree(node*);
 
 // Driver program to test functions
 int main() {
+	//**********************************************************
     // these arrays produce correct output
     int in[] = { 9, 3, 1, 0, 4, 2, 7, 6, 8, 5 };
     int post[] = { 9, 1, 4, 0, 3, 6, 7, 5, 8, 2 };
@@ -72,14 +77,64 @@ int main() {
     // en.wikipedia.org/wiki/Binary_search_tree
     //int in[] = { 1, 3, 4, 6, 7, 8, 10, 13, 14 };
     //int post[] = { 1, 4, 7, 6, 3, 13, 14, 10, 8 };
+	//**********************************************************
+	
 
-    // bad input to prove correctness
+	//**********************************************************
+	// All bad input to prove correctness
+	
+    // produces different trees
     //int in[] = { 1, 3, 2 };
     //int post[] = { 2, 1, 3 };
-
-    int len = sizeof(in)/sizeof(in[0]);
-    node* root = build_tree(in, 0, len - 1, post, 0, len - 1);
-
+	
+	// different sized arrays cannot form the same tree
+    //int in[] = { 1, 3, 2, 5 };
+    //int post[] = { 2, 1, 3 };
+	
+	// no tree can exist if the arrays contain different values
+    //int in[] = { 1, 3, 2, 5 };
+    //int post[] = { 2, 1, 3, 6 };
+	//**********************************************************
+	
+    int in_len = sizeof(in)/sizeof(in[0]);
+	int post_len = sizeof(post)/sizeof(post[0]);
+	
+	int* in_check = (int*)malloc(sizeof(int)*in_len);
+	int* post_check = (int*)malloc(sizeof(int)*post_len);
+	
+	// print the two input arrays to show comparisons
+	printf("The input arrays:\n");
+	printf("In-Order: ");
+	print_input_array(in, in_len);
+	printf("Post-Order: ");
+	print_input_array(post, post_len);
+	
+	// if the input arrays are not the same length, a common tree cannot exist
+	if(in_len != post_len) {
+		printf("The input arrays are not of the same length. No common tree exists.");
+		return -1;
+	}
+	
+	// The last element in the post-order traversal array is always the root of the tree,
+	// so if this value is not found in the in-order traversal array, a common tree cannot exist
+	if(search(in, 0, in_len-1, post[post_len-1]) == -1) {
+		printf("The input traversals do not contain the same values. No common tree exists.");
+		return -1;
+	}
+	
+    node* root = build_tree(in, 0, in_len - 1, post, 0, post_len - 1);
+	
+	// get the traversals from the constructed tree
+	in_fill_array(root, in_check, 0);
+	post_fill_array(root, post_check, 0);
+	
+	// if the input traversals are not the same as the traversals collected from the 
+	// constructed tree, no common tree exists
+	if((compare_arrays(in, in_check) == -1) || (compare_arrays(post, post_check) == -1)) {
+		printf("The input traversals do not match the output traversals. No common tree exists.");
+		return -1;
+	}
+	
     // test the built tree by printing In order traversal
     printf("\nInorder traversal of the constructed tree is: \n");
     print_inorder(root);
@@ -97,9 +152,7 @@ int main() {
 
 /* Recursive function to construct binary tree of size n from
  *  in-order traversal in[] and post-order traversal post[].  Initial values
- *  of inStart and inEnd should be 0 and n - 1.  The function doesn't
- *  do any error checking for cases where in-order and post-order
- *  do not form a tree
+ *  of inStart and inEnd should be 0 and n - 1. 
  */
 node* build_tree(int in[], int inStart, int inEnd,
                  int post[], int postStart, int postEnd) {
@@ -120,15 +173,14 @@ node* build_tree(int in[], int inStart, int inEnd,
 }
 
 // Function to find index of value in arr[start...end]
-// The function assumes that value is present in in[]
 int search(int arr[], int start, int end, int value) {
     int i;
-    for(i = start; i < end; i++) {
+    for(i = start; i <= end; i++) {
         if(arr[i] == value)
             return i;
     }
 
-    return i;
+    return -1;
 }
 
 // function that allocates a new node with the
@@ -172,14 +224,61 @@ void print_postorder(node* n) {
     printf("%d ", n->data);
 }
 
-// ******************************************
+// this function is just for printing the input arrays
+// so we can compare the output after running the algorithm
+void print_input_array(int arr[], int len) {
+	int i;
+	for(i = 0; i <= len-1; i++ ) {
+		printf("%d ", arr[i]);
+	}
+	printf("\n");
+}
+
+// walk the tree in-order and collect all the values
+// so that it can be compared to the input array
+int in_fill_array(node* root, int* arr, int pos) {
+	if(root->left != NULL) {
+		pos = in_fill_array(root->left, arr, pos);
+	}
+	arr[pos++] = root->data;
+	
+	if(root->right != NULL) {
+		pos = in_fill_array(root->right, arr, pos);
+	}
+	return pos;
+}
+
+// walk the tree post-order and collect all the values
+// so that it can be compared to the input array
+int post_fill_array(node* root, int* arr, int pos) {
+	if(root->left != NULL) {
+		pos = in_fill_array(root->left, arr, pos);
+	}
+	if(root->right != NULL) {
+		pos = in_fill_array(root->right, arr, pos);
+	}
+	arr[pos++] = root->data;
+	return pos;
+}
+
+// make sure the arrays contain the same values
+int compare_arrays(int* a, int* b) {
+	int i;
+	int len = sizeof(a)/sizeof(a[0]);
+	for(i = 0; i <= len - 1; i++) {
+		if(a[i] != b[i]) return -1;
+	}
+	return 0;
+}
+
+// **********************************************************
 // All the functions below are related to
 // printing the tree in ascii form to prove
 // its correctness.
 //
 // Some of the ascii code borrowed from:
 // http://ideone.com/wrY8Vo
-// ******************************************
+// **********************************************************
 int MIN (int X, int Y) {
     return ((X) < (Y)) ? (X) : (Y);
 }

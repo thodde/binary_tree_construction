@@ -1,0 +1,21 @@
+The input arrays:
+In-Order: 9 3 1 0 4 2 7 6 8 5
+Post-Order: 9 1 4 0 3 6 7 5 8 2
+
+Inorder traversal of the constructed tree is:
+9 3 1 0 4 2 7 6 8 5
+
+Postorder traversal of the constructed tree is:
+9 1 4 0 3 6 7 5 8 2
+
+Ascii Representation of Tree:
+      2
+     / \
+    /   \
+   /     \
+  3       8
+ / \     / \
+9   0   7   5
+   / \   \
+  1   4   6
+
