@@ -1,3 +1,6 @@
+// Sample run with correct input
+
+$ ./a.exe
 The input arrays:
 In-Order: 9 3 1 0 4 2 7 6 8 5
 Post-Order: 9 1 4 0 3 6 7 5 8 2
@@ -19,3 +22,14 @@ Ascii Representation of Tree:
    / \   \
   1   4   6
 
+
+
+
+
+// Sample Run with invalid input
+
+$ ./a.exe
+The input arrays:
+In-Order: 1 3 2
+Post-Order: 2 1 3
+The input traversals do not match the output traversals. No common tree exists.
